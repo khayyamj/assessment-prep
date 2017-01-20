@@ -124,18 +124,12 @@ function greetingMaker(name, greeting) {
 /////{event: <eventname>, daysLeft: <days left>}
 
 function countdownMaker(eventStr,days) {
-    function countDown (days) {
-        return days -= 1;
-    }
  return function () {
-    var daysLeft = countDown(days);
-    var obj = {
-        event: eventStr,
-        days: days
-    }
+    days -= 1;
+    return {event: eventStr, daysLeft: days}
  };
-};
-console.log (countdownMaker('Assessment', 2));
+}
+
 /////Type Checking/////
 
 //14. Write a function called notMyType which takes in a parameter
